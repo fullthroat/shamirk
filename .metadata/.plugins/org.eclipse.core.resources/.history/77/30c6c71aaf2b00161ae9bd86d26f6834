@@ -1,0 +1,5 @@
+package com.bondinco.poc.services;
+
+public class PersonalData {
+
+}

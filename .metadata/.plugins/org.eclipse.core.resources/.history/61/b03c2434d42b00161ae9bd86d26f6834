@@ -1,0 +1,44 @@
+package com.bondinco.poc.services;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.bondinco.poc.data.Employee;
+
+@SpringBootApplication
+@RestController
+@EnableDiscoveryClient
+@EnableZuulProxy
+public class EmployeeData implements CommandLineRunner{
+	
+	private static List<Employee> employees=new ArrayList<Employee>();
+
+	public static void main(String args[]){
+		SpringApplication.run(EmployeeData.class, args);
+	}
+	
+	@RequestMapping("/")
+	public List<Employee> getEmployees(){
+		return employees;
+	}
+
+
+
+	@Override
+	public void run(String... args) throws Exception {
+		employees.add(new Employee("Kazim Abdi","123","MA","Boston"));
+		employees.add(new Employee("Abdul Hafeez","786","RI","Providence"));
+		
+	}
+
+	
+		
+}

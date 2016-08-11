@@ -1,0 +1,37 @@
+package com.bondinco.service;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
+
+
+import com.bondinco.data.Assessment;
+
+@RestController
+@SpringBootApplication
+public class AssessmentService implements CommandLineRunner {
+	
+	private static List<Assessment> participants = new ArrayList<Assessment>();
+
+    public static void main(String[] args) {
+        SpringApplication.run(AssessmentService.class, args);
+    }
+
+	@Override
+	public void run(String... arg0) throws Exception {
+		participants.add(new Participant("Ryan", "Baxter", "MA", "S", Arrays.asList("123", "456")));
+		participants.add(new Participant("Stephanie", "Baxter", "MA", "S", Arrays.asList("456")));		
+	}
+	
+	@RequestMapping("/")
+	public List<Assessment> getParticipants() {
+		return participants;
+	}
+	
+	@RequestMapping("/races/{id}")
+	public List<Assessment> getParticipants(@PathVariable String id) {
+		return participants.stream().filter(p -> p.getRaces().contains(id)).collect(Collectors.toList());
+	}
+}

@@ -1,0 +1,5 @@
+package com.bondinco.gateway;
+
+public class EurekaApplication {
+
+}

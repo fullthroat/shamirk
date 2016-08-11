@@ -1,0 +1,9 @@
+server:
+  port: 8080
+ 
+ zuul:
+  routes:
+    races: /races/**
+    participants: /paticipants/**
+ 
+  

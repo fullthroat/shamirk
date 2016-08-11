@@ -1,0 +1,46 @@
+package com.bondinco.service;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+
+import com.bondinco.data.Assessment;
+
+@RestController
+@SpringBootApplication
+public class AssessmentService implements CommandLineRunner {
+	
+	private static List<Assessment> assessments = new ArrayList<Assessment>();
+
+    public static void main(String[] args) {
+        SpringApplication.run(AssessmentService.class, args);
+    }
+
+	
+    	@RequestMapping("/")
+	public List<Assessment> getParticipants() {
+		return assessments;
+	}
+	
+	@RequestMapping("/assessments/{id}")
+	public List<Assessment> getAssessments(@PathVariable String id) {
+		return assessments.stream().filter(p -> p.getAssessments().contains(id)).collect(Collectors.toList());
+	}
+
+
+	@Override
+	public void run(String... args) throws Exception {
+		assessments.add(new Assessment("Kazim","Abidi","2016","Technology",Arrays.asList("1234","5678"),"Pass"));
+		assessments.add(new Assessment("Abdul","Hafeez","2015","Technology",Arrays.asList("786","123457"),"Pass"));
+		
+	}
+}

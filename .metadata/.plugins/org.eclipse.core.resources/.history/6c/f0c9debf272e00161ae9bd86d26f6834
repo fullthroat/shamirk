@@ -1,0 +1,8 @@
+package com.bondinco.service;
+
+import org.springframework.cloud.netflix.feign.FeignClient;
+
+@FeignClient("employeedata")
+public interface EmployeeDataClient {
+
+}

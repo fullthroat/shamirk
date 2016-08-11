@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;com.bondinco.hackathon&apos; to &apos;com.bondinco.assessment&apos;&#x0A;- Original project: &apos;bondinco-hackathon&apos;&#x0A;- Original element: &apos;bondinco-hackathon/src/main/java/com.bondinco.hackathon&apos;&#x0A;- Renamed element: &apos;bondinco-hackathon/src/main/java/com.bondinco.assessment&apos;&#x0A;- Update references to refactored element&#x0A;- Update textual occurrences in comments and strings&#x0A;- Rename subpackages of the package" description="Rename package &apos;com.bondinco.hackathon&apos;" flags="589830" hierarchical="true" id="org.eclipse.jdt.ui.rename.package" input="/src\/main\/java&lt;com.bondinco.hackathon" name="com.bondinco.assessment" qualified="false" references="true" stamp="1465198950136" textual="false" version="1.0"/>
+</session>

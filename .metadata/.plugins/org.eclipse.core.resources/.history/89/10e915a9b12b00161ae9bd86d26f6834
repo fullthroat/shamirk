@@ -1,0 +1,5 @@
+package com.bondinco.poc.data;
+
+public class Department {
+
+}

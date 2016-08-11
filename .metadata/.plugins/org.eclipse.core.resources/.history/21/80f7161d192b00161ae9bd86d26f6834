@@ -1,0 +1,9 @@
+package employeedata;
+
+@SpringBootApplication
+@RestController
+public class EmployeeData implements CommandLineRunner{
+	
+	private static List<EMployee> races=new ArrayList<>
+
+}

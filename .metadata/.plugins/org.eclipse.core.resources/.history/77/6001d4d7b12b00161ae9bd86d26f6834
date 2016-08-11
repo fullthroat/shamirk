@@ -1,0 +1,9 @@
+package com.bondinco.poc.data;
+
+public class Department {
+	
+	private String departmentName;
+	private String jobRole;
+	private String reportingTitle;
+
+}

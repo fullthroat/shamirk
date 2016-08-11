@@ -1,0 +1,18 @@
+package com.bondinco.service;
+
+import java.util.List;
+
+import com.bondinco.data.Assessment;
+
+public class AssessmentOfEmployees extends Assessment{
+	
+	private List<Employee> employees;
+
+	public AssessmentOfEmployees(String firstName, String lastName, String joiningYear, String department,
+			List<String> assessments, String passFail) {
+		super(firstName, lastName, joiningYear, department, assessments, passFail);
+		// TODO Auto-generated constructor stub
+	}
+
+	
+}

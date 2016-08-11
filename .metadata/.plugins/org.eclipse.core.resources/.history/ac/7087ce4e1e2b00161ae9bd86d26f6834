@@ -1,0 +1,24 @@
+package employeedata;
+
+@SpringBootApplication
+@RestController
+public class EmployeeData implements CommandLineRunner{
+	
+	private static List<Employee> employees=new ArrayList<Employee>();
+
+	public static void main(String args[]){
+		SpringApplicaiton.run(OcrRacesApplication.class, args);
+	}
+	
+	@Override
+	public void run(String... arg0)throws Exception{
+		employees.add(new Employee("Kazim Abdi","123","MA","Boston"));
+		employees.add(new Employee("Abdul Hafeez","786","RI","Providence"));
+		
+	}
+	
+	@RequestMapping("/")
+	public List<Employee> getEmployees(){
+		return employees;
+	}
+}
